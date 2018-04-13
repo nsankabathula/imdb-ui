@@ -1,0 +1,202 @@
+[
+    {
+        "type": "JSON",
+        "body": [
+            {
+                "tconst": "tconst-01",
+                "titleType": "movie",
+                "primaryTitle": "First Blood",
+                "runtimeMinutes": 90,
+                "genres": [
+                    "action",
+                    "thriller"
+                ],
+                "averageRating": 120.7,
+                "numVotes": 1000,
+                "poster": "https://picsum.photos/1200/200?image=525"
+            },
+            {
+                "tconst": "tconst-02",
+                "titleType": "movie",
+                "primaryTitle": "First Blood - II",
+                "runtimeMinutes": 120,
+                "genres": [
+                    "action",
+                    "thriller"
+                ],
+                "averageRating": 20.7,
+                "numVotes": 2000,
+                "poster": "https://picsum.photos/1200/200?image=1065"
+            },
+            {
+                "tconst": "tconst-03",
+                "titleType": "movie",
+                "primaryTitle": "First Blood - XXX",
+                "runtimeMinutes": 120,
+                "genres": [
+                    "action",
+                    "thriller"
+                ],
+                "averageRating": 20.7,
+                "numVotes": 2000,
+                "poster": "https://picsum.photos/1200/200?image=1062"
+            },
+            {
+                "tconst": "tconst-04",
+                "titleType": "movie",
+                "primaryTitle": "First Blood - 4",
+                "runtimeMinutes": 120,
+                "genres": [
+                    "action",
+                    "thriller"
+                ],
+                "averageRating": 20.7,
+                "numVotes": 2000,
+                "poster": "https://picsum.photos/1200/200?image=1061"
+            },
+            {
+                "tconst": "tconst-05",
+                "titleType": "movie",
+                "primaryTitle": "First Blood - 4",
+                "runtimeMinutes": 120,
+                "genres": [
+                    "action",
+                    "thriller"
+                ],
+                "averageRating": 20.7,
+                "numVotes": 2000,
+                "poster": "https://picsum.photos/1200/200?image=161"
+            }
+        ]
+    },
+    {
+        "type": "TEXT",
+        "body": "Find me First Blood movie"
+    },
+    {
+        "type": "JSON",
+        "body": [
+            {
+                "tconst": "tconst-01",
+                "titleType": "movie",
+                "primaryTitle": "First Blood",
+                "runtimeMinutes": 90,
+                "genres": [
+                    "action",
+                    "thriller"
+                ],
+                "averageRating": 120.7,
+                "numVotes": 1000,
+                "poster": "https://picsum.photos/1200/200?image=122"
+            },
+            {
+                "tconst": "tconst-02",
+                "titleType": "movie",
+                "primaryTitle": "First Blood - 1",
+                "runtimeMinutes": 120,
+                "genres": [
+                    "action",
+                    "thriller"
+                ],
+                "averageRating": 20.7,
+                "numVotes": 2000,
+                "poster": "https://picsum.photos/1200/200?image=554"
+            },
+            {
+                "tconst": "tconst-02",
+                "titleType": "movie",
+                "primaryTitle": "First Blood - 2",
+                "runtimeMinutes": 120,
+                "genres": [
+                    "action",
+                    "thriller"
+                ],
+                "averageRating": 20.7,
+                "numVotes": 2000,
+                "poster": "https://picsum.photos/1200/200?image=232"
+            },
+            {
+                "tconst": "tconst-03",
+                "titleType": "movie",
+                "primaryTitle": "First Blood - 3",
+                "runtimeMinutes": 120,
+                "genres": [
+                    "action",
+                    "thriller"
+                ],
+                "averageRating": 20.7,
+                "numVotes": 2000,
+                "poster": "https://picsum.photos/1200/200?image=784"
+            },
+            {
+                "tconst": "tconst-04",
+                "titleType": "movie",
+                "primaryTitle": "First Blood - 4",
+                "runtimeMinutes": 120,
+                "genres": [
+                    "action",
+                    "thriller"
+                ],
+                "averageRating": 20.7,
+                "numVotes": 2000,
+                "poster": "https://picsum.photos/1200/200?image=784"
+            },
+            {
+                "tconst": "tconst-05",
+                "titleType": "movie",
+                "primaryTitle": "First Blood - 5",
+                "runtimeMinutes": 120,
+                "genres": [
+                    "action",
+                    "thriller"
+                ],
+                "averageRating": 20.7,
+                "numVotes": 2000,
+                "poster": "https://picsum.photos/1200/200?image=784"
+            },
+            {
+                "tconst": "tconst-03",
+                "titleType": "movie",
+                "primaryTitle": "First Blood - 3",
+                "runtimeMinutes": 120,
+                "genres": [
+                    "action",
+                    "thriller"
+                ],
+                "averageRating": 20.7,
+                "numVotes": 2000,
+                "poster": "https://picsum.photos/1200/200?image=784"
+            },
+            {
+                "tconst": "tconst-04",
+                "titleType": "movie",
+                "primaryTitle": "First Blood - 4",
+                "runtimeMinutes": 120,
+                "genres": [
+                    "action",
+                    "thriller"
+                ],
+                "averageRating": 20.7,
+                "numVotes": 2000,
+                "poster": "https://picsum.photos/1200/200?image=784"
+            },
+            {
+                "tconst": "tconst-05",
+                "titleType": "movie",
+                "primaryTitle": "First Blood - 5",
+                "runtimeMinutes": 120,
+                "genres": [
+                    "action",
+                    "thriller"
+                ],
+                "averageRating": 20.7,
+                "numVotes": 2000,
+                "poster": "https://picsum.photos/1200/200?image=784"
+            }
+        ]
+    },
+    {
+        "type": "TEXT",
+        "body": "Find me GOT Season 5"
+    }
+]

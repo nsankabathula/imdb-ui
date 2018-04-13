@@ -1,0 +1,23 @@
+<ng-template #rt let-r="result" let-t="term">
+    {{ r.title}}
+</ng-template>
+
+<div class="form-group">
+    <label for="typeahead-http">Search for a wiki page:</label>
+    <input id="typeahead-http" type="text" class="form-control" [class.is-invalid]="searchFailed" [(ngModel)]="model" [resultTemplate]="rt"
+        [ngbTypeahead]="searchWiki" placeholder="Wikipedia search" [inputFormatter]="formatter" />
+    <span *ngIf="searching">searching...</span>
+    <div class="invalid-feedback" *ngIf="searchFailed">Sorry, suggestions could not be loaded.</div>
+    <button class="btn btn-primary" (click)="searchWikiImages()"> Find Images</button>
+</div>
+
+<hr>
+<pre>Model: {{ model | json }}</pre>
+
+
+<div style="height:20%;width:100%" class="container-fluid row" *ngIf="model && model.imageLinks">
+    <div *ngFor="let link of model.imageLinks" class="block">
+        <img [src]="link.url" class="img-thumbnail" height="100%" width="100%">
+    </div>
+
+</div>

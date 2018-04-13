@@ -1,0 +1,11 @@
+<div class="panel panel-default rounded ">
+    <div class="panel-header rounded border">
+        <span class="badge badge-pill badge-dark">{{chatConverstation.length}}</span>
+    </div>
+    <br/>
+    <div class="panel-body rounded">
+        <app-message-component *ngFor="let conversation of chatConverstation ; index as idx" [message]="conversation">{{idx}}</app-message-component>
+    </div>
+    <div class="panel-footer">
+    </div>
+</div>

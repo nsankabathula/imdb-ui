@@ -1,0 +1,18 @@
+{
+    "compilerOptions": {
+        "paths": {
+            "@app-basics/*": [
+                "app/basic/*"
+            ],
+            "@app-services/*": [
+                "app/services/*"
+            ],
+            "@imdb-wiki-module/*": [
+                "app/imdb/wiki/*"
+            ],
+            "@imdb-chat-module/*": [
+                "app/imdb/chat/*"
+            ]
+        }
+    }
+}

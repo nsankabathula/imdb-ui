@@ -1,0 +1,37 @@
+<!--
+<nav class="navbar sticky-top navbar-expand-lg navbar-dark bg-dark border rounded">
+    <a class="navbar-brand" href="#">Navbar</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false"
+        aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav">
+            <li class="nav-item active">
+                <a class="nav-link" href="#">Home
+                    <span class="sr-only">(current)</span>
+                </a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" disabled href="#">Disabled</a>
+            </li>
+        </ul>
+    </div>
+</nav>
+-->
+<nav class="navbar fixed-top navbar-expand-lg navbar-light bg-dark border rounded">
+    <!--
+    <a class="btn " href="mailto:someone@example.com&subject=AppTitle&body=You%20are%20invited%20to%20a%20big%20summer%20party!">
+        <i class="material-icons">message</i>
+    </a>
+-->
+
+
+    <form class="input-group input-group-lg" [formGroup]="chatForm">
+        <input class="form-control mr-sm-2" type="text" placeholder="Chat" aria-label=" message" formControlName="message">
+        <button class="btn btn-outline-danger " type="submit" [disabled]="!chatForm.valid" (click)="sendMessage($event)">
+            <i class="material-icons md-48 ">send</i>
+        </button>
+    </form>
+
+</nav>

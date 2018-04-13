@@ -1,0 +1,58 @@
+<p>
+    <ng-container *ngIf="message.type === 'TEXT'; else jsonResponse" class="rounded">
+
+        <ngb-alert [dismissible]="false" type="primary">
+            {{message.body | json}}
+        </ngb-alert>
+
+    </ng-container>
+    <ng-template #jsonResponse class="rounded">
+        <ngb-alert [dismissible]="false" type="dark">
+            <div class="card">
+                <div class="card-body">
+                    <div class="card-deck">
+
+                        <div class="card bg-dark text-white mb-3" style="max-width: 15rem;min-height: 18rem;" *ngFor="let title of message.body[currentSlideIndex] ; index as idx">
+                            <img class="card-img-top" [src]="title.poster" [alt]="title.poster">
+                            <div class="card-body card-img-overlay">
+                                <h6>{{title.numVotes}}</h6>
+                                <ngb-rating [rate]="title.averageRating" readonly="true"></ngb-rating>
+                            </div>
+                            <div class="card-body">
+                                <h5 class="card-text">{{title.primaryTitle}}</h5>
+                            </div>
+                            <div class="card-footer">
+                                <div class="btn-toolbar justify-content-between" role="toolbar" aria-label="Toolbar with button groups">
+                                    <div class="btn-group btn-group-sm">
+                                        <button type="button" class="btn btn-dark btn-sm" (click)="selectTitle(title)">
+                                            <i class="material-icons">info_outline</i>
+                                        </button>
+                                        <button type="button" class="btn btn-dark btn-sm">
+                                            <i class="material-icons">share</i>
+                                        </button>
+                                        <button type="button" class="btn btn-dark btn-sm">
+                                            <i class="material-icons">launch</i>
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+                <div>
+                    <div class="btn-toolbar justify-content-center" role="toolbar" aria-label="Toolbar with button groups">
+                        <ul class="pagination pagination-sm justify-content-center">
+                            <div class="btn-group">
+                                <button type="button" class="btn btn-light" *ngFor="let titles of message.body ; index as slideIndex" [disabled]="slideIndex===currentSlideIndex">
+                                    <i class="material-icons" (click)="selectTile(titles, slideIndex)">remove</i>
+                                </button>
+                            </div>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+        </ngb-alert>
+    </ng-template>
+</p>
