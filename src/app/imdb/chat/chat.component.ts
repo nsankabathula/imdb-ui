@@ -5,7 +5,7 @@ import { Observable } from 'rxjs/Observable';
 import { of } from 'rxjs/observable/of';
 import { HttpClient } from '@angular/common/http';
 import { map } from 'rxjs/operators';
-import { IMessage, MessageType, IResponse, IImageProperties } from '@imdb-chat-module/chat.model';
+import { IMessage, MessageType, IResponse, IImageProperties, DEFAULT_MESSAGE } from '@imdb-chat-module/chat.model';
 
 import { ChatService } from '@app-services/chat.service';
 
@@ -54,7 +54,7 @@ export class ChatComponent implements OnInit {
                 });
             }
             );
-        this.chatSvc.send('Find me First Blood movie');
+        this.chatSvc.send(DEFAULT_MESSAGE);
 
 
     }

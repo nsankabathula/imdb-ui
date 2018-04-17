@@ -25,10 +25,9 @@
         <i class="material-icons">message</i>
     </a>
 -->
-
-
     <form class="input-group input-group-lg" [formGroup]="chatForm">
         <input class="form-control mr-sm-2" type="text" placeholder="Chat" aria-label=" message" formControlName="message">
+        <input class="form-control mr-sm-2" type="text" placeholder="location" aria-label=" location" formControlName="location">
         <button class="btn btn-outline-danger " type="submit" [disabled]="!chatForm.valid" (click)="sendMessage($event)">
             <i class="material-icons md-48 ">send</i>
         </button>

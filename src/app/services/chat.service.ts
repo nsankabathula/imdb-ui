@@ -12,7 +12,7 @@ import 'rxjs/add/operator/map';
 import 'rxjs/add/operator/switchMap';
 import 'rxjs/add/operator/merge';
 import 'rxjs/add/observable/forkJoin';
-import { IMessage, IResponse, MessageType } from '@imdb-chat-module/chat.model';
+import { IMessage, IResponse, MessageType, DEFAULT_MESSAGE } from '@imdb-chat-module/chat.model';
 import { HelperUtils } from '@app-basics/helper';
 import { Subject } from 'rxjs/Subject';
 
@@ -39,11 +39,8 @@ export class ChatService {
         this.emit();
     }
 
-    send(message: any): void {
-        const iMessage = <IMessage>{
-            type: MessageType.text,
-            body: message
-        };
+    send(message: IMessage): void {
+        const iMessage = Object.assign(DEFAULT_MESSAGE, message);
         this.chatConverstation.push(iMessage);
         this.emit();
         this.postMessage(iMessage);
@@ -53,8 +50,8 @@ export class ChatService {
     }
 
     postMessage(iMessage: any): void {
-        console.log('posting...', window.location.hostname);
-        const ws_url: string = ((window.location.hostname === 'localhost') ? 'http://localhost:3000' : window.location.hostname)
+        console.log('posting...', iMessage);
+        const ws_url: string = (!(iMessage.location) ? 'http://localhost:3000' : iMessage.location)
             + '/dialogflow/api';
         console.log('URL', ws_url);
         this.http.post(ws_url, iMessage, httpOptions).subscribe(

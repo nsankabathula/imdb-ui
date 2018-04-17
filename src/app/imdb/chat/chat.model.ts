@@ -6,6 +6,7 @@ export enum MessageType {
 export interface IMessage {
     type: string;
     body: Array<IResponse> | string | any;
+    location?: string;
 }
 
 export interface IResponse {
@@ -18,6 +19,10 @@ export interface IResponse {
     numVotes: number;
     poster: string;
 }
+
+export const DEFAULT_MESSAGE: IMessage = <IMessage>{
+    type: MessageType.text, body: 'Good Morning', location: undefined
+};
 
 
 export interface IMessageExtension extends IMessage {
