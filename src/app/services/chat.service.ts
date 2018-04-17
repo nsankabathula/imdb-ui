@@ -53,12 +53,14 @@ export class ChatService {
     }
 
     postMessage(iMessage: any): void {
-        console.log('posting...');
+        console.log('posting...', window.location.hostname);
+        const ws_url: string = ((window.location.hostname === 'localhost') ? 'http://localhost:3000' : window.location.hostname)
+            + '/dialogflow/api';
         this.http.post('http://localhost:3000/dialogflow/api', iMessage, httpOptions).subscribe(
             (res: any) => {
                 console.log(res);
                 this.chatConverstation.push(<IMessage>res);
-                //console.log('this.chatConverstation', this.chatConverstation);
+                // console.log('this.chatConverstation', this.chatConverstation);
                 this.emit();
             }
         );
