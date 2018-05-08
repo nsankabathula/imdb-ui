@@ -1,6 +1,5 @@
 import { Component, Injectable } from '@angular/core';
 import { Observable } from 'rxjs/Observable';
-import { of } from 'rxjs/observable/of';
 import { WikiService } from '@app-services/wiki.service';
 
 const VALID_IMG_EXTENSION = {

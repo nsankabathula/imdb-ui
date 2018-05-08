@@ -2,19 +2,18 @@ declare var require: any;
 
 import { Component, Injectable } from '@angular/core';
 import { HttpClient, HttpParams, HttpHeaders } from '@angular/common/http';
+import { Subject } from 'rxjs/Subject';
 import { Observable } from 'rxjs/Observable';
-import { of } from 'rxjs/observable/of';
-import 'rxjs/add/operator/catch';
-import 'rxjs/add/operator/debounceTime';
-import 'rxjs/add/operator/distinctUntilChanged';
-import 'rxjs/add/operator/do';
-import 'rxjs/add/operator/map';
-import 'rxjs/add/operator/switchMap';
-import 'rxjs/add/operator/merge';
-import 'rxjs/add/observable/forkJoin';
+
+
+
+
+
+
+
+
 import { IMessage, IResponse, MessageType, DEFAULT_MESSAGE } from '@imdb-chat-module/chat.model';
 import { HelperUtils } from '@app-basics/helper';
-import { Subject } from 'rxjs/Subject';
 
 
 

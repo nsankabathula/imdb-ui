@@ -1,16 +1,23 @@
 
+// import { forkJoin as observableForkJoin } from "rxjs/observable/forkJoin";
+import { forkJoin as observableForkJoin } from 'rxjs';
+import { Subject } from 'rxjs/Subject';
+import { Observable } from 'rxjs/Observable';
+
+
+
+import { map, switchMap } from 'rxjs/operators';
+
 import { Component, Injectable } from '@angular/core';
 import { HttpClient, HttpParams } from '@angular/common/http';
-import { Observable } from 'rxjs/Observable';
-import { of } from 'rxjs/observable/of';
-import 'rxjs/add/operator/catch';
-import 'rxjs/add/operator/debounceTime';
-import 'rxjs/add/operator/distinctUntilChanged';
-import 'rxjs/add/operator/do';
-import 'rxjs/add/operator/map';
-import 'rxjs/add/operator/switchMap';
-import 'rxjs/add/operator/merge';
-import 'rxjs/add/observable/forkJoin';
+
+
+
+
+
+
+
+
 const reducer = (accumulator, currentValue) => accumulator.concat(currentValue);
 const WIKI_URL = 'https://en.wikipedia.org/w/api.php';
 const PARAMS_OPENSEARCH = new HttpParams({
@@ -50,7 +57,7 @@ export class WikiService {
 
     search(term: string) {
         if (term === '') {
-            return of([]);
+            return Observable.of([]);
         }
         const handleSearchResponse = (response) => {
             if (Array.isArray(response) && response.length === 4) {
@@ -71,8 +78,8 @@ export class WikiService {
         };
 
         return this.http
-            .get(WIKI_URL, { params: PARAMS_OPENSEARCH.set('search', term) })
-            .map(handleSearchResponse)
+            .get(WIKI_URL, { params: PARAMS_OPENSEARCH.set('search', term) }).pipe(
+            map(handleSearchResponse))
             // .map(response => response[1])
             ;
     }
@@ -100,8 +107,8 @@ export class WikiService {
         };
 
         return this.http
-            .get(WIKI_URL, { params: PARAMS_IMAGE_INFO.set('titles', title) })
-            .map(handleImageResponse)
+            .get(WIKI_URL, { params: PARAMS_IMAGE_INFO.set('titles', title) }).pipe(
+            map(handleImageResponse))
             // .do(formatedResponse => console.log(formatedResponse))
             ;
     }
@@ -112,13 +119,13 @@ export class WikiService {
             observableBatch.push(this.imageInfo(image.title));
         });
 
-        return Observable.forkJoin(observableBatch).map(
+        return observableForkJoin(observableBatch).pipe(map(
             (result) => {
                 const flattenResult = (<Array<any>>result.reduce(reducer)).reduce(reducer);
                 console.log(flattenResult);
                 return flattenResult;
             }
-        );
+        ));
 
     }
 
@@ -151,7 +158,7 @@ export class WikiService {
         };
 
         return this.http
-            .get(WIKI_URL, { params: PARAMS_IMAGES.set('titles', term) })
-            .switchMap(handleImageResponse);
+            .get(WIKI_URL, { params: PARAMS_IMAGES.set('titles', term) }).pipe(
+            switchMap(handleImageResponse));
     }
 }

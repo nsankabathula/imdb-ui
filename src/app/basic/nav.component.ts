@@ -29,7 +29,7 @@ export class AppToolbarComponent {
     createForm() {
         this.chatForm = this.fb.group({
             message: ['', Validators.required], // <--- the FormControl called "name"
-            location: ['', Validators.required,], // <--- the FormControl called "name"
+            location: ['', Validators.required], // <--- the FormControl called "name"
         });
     }
 }

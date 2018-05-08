@@ -1,6 +1,5 @@
 import { Component, Injectable, OnInit, Input } from '@angular/core';
 import { Observable } from 'rxjs/Observable';
-import { of } from 'rxjs/observable/of';
 import { HttpClient } from '@angular/common/http';
 import { map } from 'rxjs/operators';
 import { IMessage, IMessageExtension } from '@imdb-chat-module/chat.model';

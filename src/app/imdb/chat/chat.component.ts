@@ -2,7 +2,6 @@ declare var require: any;
 
 import { Component, Injectable, OnInit } from '@angular/core';
 import { Observable } from 'rxjs/Observable';
-import { of } from 'rxjs/observable/of';
 import { HttpClient } from '@angular/common/http';
 import { map } from 'rxjs/operators';
 import { IMessage, MessageType, IResponse, IImageProperties, DEFAULT_MESSAGE } from '@imdb-chat-module/chat.model';
@@ -43,7 +42,7 @@ export class ChatComponent implements OnInit {
                         message.body.forEach((response: IResponse) => {
                             response.poster = Math.floor(Math.random() * 100).toString();
                             response.poster =
-                                //"https://images-na.ssl-images-amazon.com/images/M/MV5BMTg2MzI1MTg3OF5BMl5BanBnXkFtZTgwNTU3NDA2MTI@._V1_SX300.jpg";
+                                // "https://images-na.ssl-images-amazon.com/images/M/MV5BMTg2MzI1MTg3OF5BMl5BanBnXkFtZTgwNTU3NDA2MTI@._V1_SX300.jpg";
                                 imageProp.url + imageProp.height + '/' + imageProp.width + '/?image=' + response.poster;
                         });
                         message.body = HelperUtils.split(4, message.body);
