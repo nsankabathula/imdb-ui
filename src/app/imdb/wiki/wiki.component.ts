@@ -2,6 +2,9 @@ import { Component, Injectable } from '@angular/core';
 import { Observable } from 'rxjs/Observable';
 import { WikiService } from '@app-services/wiki.service';
 
+import 'rxjs/Rx';
+
+
 const VALID_IMG_EXTENSION = {
     'svg': true,
     'jpg': true,
@@ -58,7 +61,7 @@ export class WikiSearchComponent {
                         .map((result) => { console.log(result); return result; })
                         .catch(() => {
                             this.searchFailed = true;
-                            return of([]);
+                            return Observable.of([]);
                         }))
                 .do(() => this.searching = false)
                 .merge(this.hideSearchingWhenUnsubscribed);

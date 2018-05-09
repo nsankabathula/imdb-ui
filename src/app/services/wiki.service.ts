@@ -86,7 +86,7 @@ export class WikiService {
 
     imageInfo(title: string) {
         if (title === '') {
-            return of([]);
+            return Observable.of([]);
         }
 
         const handleImageResponse = (response) => {
@@ -131,7 +131,7 @@ export class WikiService {
 
     images(term: string) {
         if (term === '') {
-            return of([]);
+            return Observable.of([]);
         }
         const handleImageResponse = (response) => {
             console.log('images handleImageResponse', response);

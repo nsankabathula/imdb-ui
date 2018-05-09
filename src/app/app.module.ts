@@ -13,8 +13,8 @@ import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { AppComponent } from './app.component';
 import { AppToolbarComponent } from './basic/nav.component';
 
-import { WikiSearchComponent } from '@imdb-wiki-module/wiki.component';
-import { WikiService } from '@app-services/wiki.service';
+// import { WikiSearchComponent } from '@imdb-wiki-module/wiki.component';
+// import { WikiService } from '@app-services/wiki.service';
 
 import { ChatComponent } from '@imdb-chat-module/chat.component';
 import { MessageComponent } from '@imdb-chat-module/message.component';
@@ -22,12 +22,12 @@ import { MessageComponent } from '@imdb-chat-module/message.component';
 import { ChatService } from '@app-services/chat.service';
 
 
-const SERVICE_PROVIDERS = [ChatService, WikiService];
+const SERVICE_PROVIDERS = [ChatService];
 
-const COMPONENTS_DECLARATIONS = [AppComponent, WikiSearchComponent, AppToolbarComponent, ChatComponent, MessageComponent];
+const COMPONENTS_DECLARATIONS = [AppComponent, AppToolbarComponent, ChatComponent, MessageComponent];
 
 @NgModule({
-  declarations: [].concat(COMPONENTS_DECLARATIONS),
+  declarations: [AppComponent, AppToolbarComponent, ChatComponent, MessageComponent],
   imports: [
     BrowserModule,
     NgbModule.forRoot(),
@@ -36,7 +36,7 @@ const COMPONENTS_DECLARATIONS = [AppComponent, WikiSearchComponent, AppToolbarCo
     ReactiveFormsModule,
     HttpClientModule
   ],
-  providers: [].concat(SERVICE_PROVIDERS),
+  providers: [ChatService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
