@@ -1,6 +1,6 @@
-FROM node:carbon
+FROM node:9.11.1
 
-MAINTAINER Naveen "naveen.c.s@hotmail.com"
+LABEL AUTHOR=naveen.c.s@hotmail.com
 
 WORKDIR /usr/src/app
 
