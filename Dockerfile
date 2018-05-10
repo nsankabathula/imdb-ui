@@ -10,6 +10,6 @@ RUN npm install
 
 COPY . .
 
-EXPOSE 4200
+EXPOSE 4200/http
 
 CMD [ "npm", "start" ]
